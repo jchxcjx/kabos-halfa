@@ -2,42 +2,41 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>كابوس حلفا الجديدة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كابوس حلفا الجديدة | الأخبار العاجلة</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; text-align: center; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #d32f2f; }
+        .news-post { border-bottom: 2px solid #eee; padding: 15px; text-align: right; }
+        .news-post h2 { color: #333; }
+        .news-post img { max-width: 100%; border-radius: 5px; }
+    </style>
+</head>
+<body>
 
-                    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <div class="container">
+        <h1>مرحباً بكم في كابوس حلفا الجديدة</h1>
+        <p>هذا الموقع مخصص لإدارة أخبار وفعاليات حلفا الجديدة.</p>
+        
+        <hr>
 
-                        <style>
-                                /* هنا تضع تنسيقاتك القديمة كما هي */
-                                        body {
-                                        	            font-family: Arial, sans-serif;
-                                        	                        background-color: #f0f0f0;
-                                        	                                    text-align: center;
-                                        	                                                padding: 50px;
-                                        	                                                        }
-                                        	                                                                h1 { color: #333; }
-                                        	                                                                    </style>
-                                        	                                                                    </head>
-                                        	                                                                    <body>
+        <div id="news-section">
+            <p>جاري تحميل آخر الأخبار من لوحة التحكم...</p>
+        </div>
+    </div>
 
-                                        	                                                                        <h1>مرحباً بكم في كابوس حلفا الجديدة</h1>
-                                        	                                                                            <p>هذا الموقع قيد التطوير لإدارة أخبار وفعاليات حلفا الجديدة.</p>
-                                        	                                                                                <script>
-                                        	                                                                                      if (window.netlifyIdentity) {
-                                        	                                                                                      	        window.netlifyIdentity.on("init", user => {
-                                        	                                                                                      	        	          if (!user) {
-                                        	                                                                                      	        	          	            window.netlifyIdentity.on("login", () => {
-                                        	                                                                                      	        	          	            	              document.location.href = "/admin/";
-                                        	                                                                                      	        	          	            	                          });
-                                        	                                                                                      	        	          	            	                                    }
-                                        	                                                                                      	        	          	            	                                            });
-                                        	                                                                                      	        	          	            	                                                  }
-                                        	                                                                                      	        	          	            	                                                      </script>
-                                        	                                                                                      	        	          	            	                                                      </body>
-                                        	                                                                                      	        	          	            	                                                      </html>
-                                        	                                                                                      	        	          	            	                                                      
-                                        	                                                                                      	        	          	            })
-                                        	                                                                                      	        	          }
-                                        	                                                                                      	        })
-                                        	                                                                                      }
-                                        }
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+</body>
+</html>
