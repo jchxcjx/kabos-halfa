@@ -3,40 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كابوس حلفا الجديدة | الأخبار العاجلة</title>
+    <title>كابوس حلفا الجديدة | المنصة الإخبارية</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; text-align: center; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #d32f2f; }
-        .news-post { border-bottom: 2px solid #eee; padding: 15px; text-align: right; }
-        .news-post h2 { color: #333; }
-        .news-post img { max-width: 100%; border-radius: 5px; }
+        :root {
+            --primary-color: #e63946;
+            --dark-color: #1d3557;
+            --light-color: #f1faee;
+            --bg-color: #f8f9fa;
+        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bg-color); margin: 0; padding: 0; color: #333; }
+        
+        /* شريط العنوان */
+        header { background: var(--dark-color); color: white; padding: 15px 0; text-align: center; border-bottom: 4px solid var(--primary-color); box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        header h1 { margin: 0; font-size: 1.8rem; letter-spacing: 1px; }
+
+        /* حاوية المحتوى */
+        .container { max-width: 900px; margin: 20px auto; padding: 0 15px; }
+
+        /* خبر عاجل */
+        .breaking-news { background: var(--primary-color); color: white; padding: 10px; border-radius: 5px; margin-bottom: 20px; display: flex; align-items: center; }
+        .breaking-label { background: white; color: var(--primary-color); padding: 2px 10px; font-weight: bold; border-radius: 3px; margin-left: 10px; }
+
+        /* بطاقة الخبر */
+        .news-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 25px; transition: transform 0.3s; }
+        .news-card:hover { transform: translateY(-5px); }
+        .news-content { padding: 20px; text-align: right; }
+        .news-content h2 { margin-top: 0; color: var(--dark-color); font-size: 1.5rem; }
+        .news-content p { color: #666; line-height: 1.6; }
+        
+        .footer { text-align: center; padding: 20px; color: #888; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>مرحباً بكم في كابوس حلفا الجديدة</h1>
-        <p>هذا الموقع مخصص لإدارة أخبار وفعاليات حلفا الجديدة.</p>
-        
-        <hr>
+<header>
+    <h1>كابوس حلفا الجديدة</h1>
+</header>
 
-        <div id="news-section">
-            <p>جاري تحميل آخر الأخبار من لوحة التحكم...</p>
-        </div>
+<div class="container">
+    <div class="breaking-news">
+        <span class="breaking-label">عاجل</span>
+        <marquee>مرحباً بكم في النسخة المطورة من موقع كابوس حلفا - نغطي أخبارنا بكل شفافية</marquee>
     </div>
 
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
+    <div id="news-section">
+        <div class="news-card">
+            <div class="news-content">
+                <h2>آخر التحديثات الميدانية</h2>
+                <p>نعمل حالياً على ربط لوحة التحكم بالواجهة الجديدة لضمان وصول الأخبار إليكم لحظة بلحظة.</p>
+                <small style="color: var(--primary-color);">منذ دقيقة</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    &copy; 2026 جميع الحقوق محفوظة لشبكة كابوس حلفا
+</div>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
       }
-    </script>
+    });
+  }
+</script>
 </body>
 </html>
